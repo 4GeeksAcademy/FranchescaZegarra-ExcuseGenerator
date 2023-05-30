@@ -17,10 +17,8 @@ window.onload = function() {
     "during my lunch",
     "while I was praying"
   ];
-  function randomElementOfArray(arr) {
-    let randomNumber = Math.floor(Math.random() * arr.length);
-    return arr[randomNumber];
-  }
+  const randomElementOfArray = array =>
+    array[Math.floor(Math.random() * array.length)];
   document.write(
     `${randomElementOfArray(who)} ${randomElementOfArray(
       action
