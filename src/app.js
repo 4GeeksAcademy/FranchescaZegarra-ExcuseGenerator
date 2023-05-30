@@ -7,9 +7,9 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  let who = ["The dog", "His turtle", "My bird", "My grandma"];
+  let who = ["The dog", "My grandma", "His turtle", "My bird"];
   let action = ["ate", "peed", "crushed", "broke"];
-  let what = ["my homework", "the car", "her arm"];
+  let what = ["my homework", "the keys", "the car"];
   let when = [
     "before the class",
     "right on time",
@@ -17,31 +17,13 @@ window.onload = function() {
     "during my lunch",
     "while I was praying"
   ];
-
-  let randomWho = Math.floor(Math.random() * who.length);
-  let randomWhen = Math.floor(Math.random() * when.length);
-  let randomAction = 0;
-  let randomWhat = 0;
-
-  if (randomWho <= 2) {
-    randomAction = Math.floor(Math.random() * 2);
-    randomWhat = 0;
-  } else {
-    randomAction = Math.floor(Math.random() * 2 + 2);
-    if (randomAction == 2) {
-      randomWhat = 1;
-    } else {
-      randomWhat = 2;
-    }
+  function randomElementOfArray(arr) {
+    let randomNumber = Math.floor(Math.random() * arr.length);
+    return arr[randomNumber];
   }
-
   document.write(
-    who[randomWho] +
-      " " +
-      action[randomAction] +
-      " " +
-      what[randomWhat] +
-      " " +
-      when[randomWhen]
+    `${randomElementOfArray(who)} ${randomElementOfArray(
+      action
+    )} ${randomElementOfArray(what)} ${randomElementOfArray(when)}`
   );
 };
